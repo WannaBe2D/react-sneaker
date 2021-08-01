@@ -132,7 +132,7 @@ function App() {
           <Orders />
         </Route>
 
-        <Route path="" exact>
+        <Route path="/" exact>
           <Home
             searchValue={searchValue}
             setSearchValue={setSearchValue}

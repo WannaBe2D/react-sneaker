@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'macro-css';
 import App from './App';
-import { BrowserRouter as Route } from 'react-router-dom';
+import { BrowserRouter as Route, HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Route>
+    <HashRouter>
       <App />
-    </Route>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

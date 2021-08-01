@@ -123,7 +123,7 @@ function App() {
         <Header onClickCart={() => setCartOpened(true)} />
 
         <Switch>
-          <Route path="" exact>
+          <Route path="/" exact>
             <Home
               searchValue={searchValue}
               setSearchValue={setSearchValue}

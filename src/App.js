@@ -123,17 +123,7 @@ function App() {
         <Header onClickCart={() => setCartOpened(true)} />
 
         <Switch>
-          <Route path="/favorites">
-            <Favorites
-              addToCart={addToCart}
-            />
-          </Route>
-
-          <Route path="/orders">
-            <Orders />
-          </Route>
-
-          <Route path="/" exact>
+          <Route path="" exact>
             <Home
               searchValue={searchValue}
               setSearchValue={setSearchValue}
@@ -143,6 +133,15 @@ function App() {
               cartItems={cartItems}
               isLoading={isLoading}
             />
+          </Route>
+          <Route path="/favorites">
+            <Favorites
+              addToCart={addToCart}
+            />
+          </Route>
+
+          <Route path="/orders">
+            <Orders />
           </Route>
         </Switch>
       </div>

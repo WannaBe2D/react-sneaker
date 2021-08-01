@@ -4,7 +4,7 @@ import axios from 'axios';
 import React from 'react';
 import AppContext from './context';
 import Drawer from './components/Drawer';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import Orders from './pages/Orders';
@@ -122,27 +122,29 @@ function App() {
         {cartOpened && <Drawer onRemove={removeItemCart} items={cartItems} />}
         <Header onClickCart={() => setCartOpened(true)} />
 
-        <Route path="/favorites">
-          <Favorites
-            addToCart={addToCart}
-          />
-        </Route>
+        <Switch>
+          <Route path="/favorites">
+            <Favorites
+              addToCart={addToCart}
+            />
+          </Route>
 
-        <Route path="/orders">
-          <Orders />
-        </Route>
+          <Route path="/orders">
+            <Orders />
+          </Route>
 
-        <Route path="/" exact>
-          <Home
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-            onChangeValue={onChangeValue}
-            items={items}
-            addToCart={addToCart}
-            cartItems={cartItems}
-            isLoading={isLoading}
-          />
-        </Route>
+          <Route path="/" exact>
+            <Home
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeValue={onChangeValue}
+              items={items}
+              addToCart={addToCart}
+              cartItems={cartItems}
+              isLoading={isLoading}
+            />
+          </Route>
+        </Switch>
       </div>
     </AppContext.Provider>
   );
